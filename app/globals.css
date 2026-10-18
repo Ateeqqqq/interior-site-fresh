@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #f4f4f5;
+  --font-hero-size: clamp(3.25rem, 2.5rem + 3.75vw, 4.75rem);
+  --font-section-size: clamp(2.25rem, 1.8rem + 2vw, 3rem);
+  --font-sub-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-card-size: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --font-body-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-caption-size: clamp(0.8125rem, 0.78rem + 0.15vw, 0.9375rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(223, 192, 139, 0.35);
+  color: #ffffff;
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Luxury typography styling */
+.font-editorial-serif {
+  font-family: var(--font-cormorant), 'Playfair Display', Georgia, serif;
+}
+
+.font-editorial-sans {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Glassmorphism token */
+.editorial-glass {
+  background: rgba(14, 14, 14, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.editorial-glass-gold {
+  background: rgba(20, 18, 15, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(223, 192, 139, 0.28);
+}
+
+/* Subtle architectural grain */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Fade In animation for dialogs */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
